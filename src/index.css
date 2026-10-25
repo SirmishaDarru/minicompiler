@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NovaScript IDE — dark, monospace, professional */
+@layer base {
+  :root {
+    /* Default to dark — IDE aesthetic */
+    --background: 222 18% 9%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 18% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 18% 11%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 190 95% 55%;
+    --primary-foreground: 222 30% 8%;
+
+    --secondary: 222 16% 16%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 222 16% 14%;
+    --muted-foreground: 215 14% 60%;
+
+    --accent: 270 80% 65%;
+    --accent-foreground: 222 30% 8%;
+
+    --destructive: 0 84% 62%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 222 14% 18%;
+    --input: 222 14% 18%;
+    --ring: 190 95% 55%;
+
+    --radius: 0.5rem;
+
+    /* Syntax highlighting tokens */
+    --syntax-keyword: 320 85% 70%;
+    --syntax-identifier: 210 20% 92%;
+    --syntax-string: 95 60% 65%;
+    --syntax-number: 35 90% 65%;
+    --syntax-operator: 190 95% 65%;
+    --syntax-comment: 215 14% 45%;
+
+    /* Editor */
+    --editor-bg: 222 20% 7%;
+    --editor-gutter: 222 18% 10%;
+    --editor-line: 215 14% 40%;
+    --editor-current-line: 222 18% 13%;
+
+    /* Status / accents */
+    --success: 145 65% 55%;
+    --warning: 35 90% 60%;
+    --info: 200 90% 65%;
+
+    /* Gradients & shadows */
+    --gradient-brand: linear-gradient(135deg, hsl(190 95% 55%), hsl(270 80% 65%));
+    --gradient-panel: linear-gradient(180deg, hsl(222 18% 11%), hsl(222 18% 9%));
+    --shadow-panel: 0 4px 24px -8px hsl(222 30% 2% / 0.6);
+    --shadow-glow: 0 0 24px -4px hsl(190 95% 55% / 0.35);
+
+    --sidebar-background: 222 20% 8%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 190 95% 55%;
+    --sidebar-primary-foreground: 222 30% 8%;
+    --sidebar-accent: 222 16% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 222 14% 16%;
+    --sidebar-ring: 190 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+@layer components {
+  .ide-scrollbar::-webkit-scrollbar { width: 10px; height: 10px; }
+  .ide-scrollbar::-webkit-scrollbar-track { background: hsl(var(--editor-bg)); }
+  .ide-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 6px;
+  }
+  .ide-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); }
+}
